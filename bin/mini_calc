@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'mini_calc'
+
+input = ARGV.join(" ")
+
+if input.empty?
+  puts "Usage: mini_calc 'expression'"
+  exit 1
+end
+
+result = MiniCalc::Interpreter.new.run(input)
+puts result
